@@ -1,4 +1,5 @@
 import "./App.css";
+import Button from "./Components/Button";
 
 const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -8,12 +9,12 @@ function App() {
 			<div className="calender">
 				<div className="grid">
 					<div className="header">
-						<button className="navigation navigation--prev"> &lt; </button>
+						<Button direction="left">&lt;</Button>
 						<div className="info">
-							<p className="month">May</p>
-							<p className="fullday">{new Date().toDateString()}</p>
+							<h2 className="month">May</h2>
+							<h3 className="fullday">{new Date().toDateString()}</h3>
 						</div>
-						<button className="navigation navigation--next">&gt;</button>
+						<Button direction="right">&gt;</Button>
 					</div>
 					<div className="week">
 						{week.map((day, index) => (
