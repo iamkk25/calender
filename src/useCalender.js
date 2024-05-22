@@ -38,14 +38,11 @@ function useCalender() {
     const now = new Date();
 
     // const currentDate = date.getDate()
-    const isCurrentDate = (now.getMonth() === date.getMonth()) && (now.getDate() === date.getDate());
-
-    console.log({ isCurrentDate });
 
     const currentMonth = months[monthIndex];
     const todayIndex = date.getDay();
     const today = week[todayIndex];
-    const fullDate = date.toDateString();
+    const fullDate = now.toDateString();
     const startDate = new Date(date.getFullYear(), monthIndex, 1).getDate();
     const lastDate = new Date(date.getFullYear(), monthIndex + 1, 0).getDate();
 
@@ -77,7 +74,6 @@ function useCalender() {
 
     return {
         days,
-        isCurrentDate,
         currentMonth,
         monthIndex,
         today,

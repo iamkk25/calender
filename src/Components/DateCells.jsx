@@ -1,6 +1,6 @@
 import styles from "./DateCells.module.css";
 
-function DateCells({ days, isCurrentDate }) {
+function DateCells({ days }) {
 	return (
 		<div className={styles.days}>
 			{days.map((day, idx) => (

@@ -8,7 +8,6 @@ function App() {
 	const {
 		dateObj,
 		monthIndex,
-		isCurrentDate,
 		currentMonth,
 		days,
 		fullDate,
@@ -28,7 +27,7 @@ function App() {
 						prevMonthHandler={prevMonthHandler}
 					/>
 					<Weekdays today={today} />
-					<DateCells isCurrentDate={isCurrentDate} days={days} />
+					<DateCells days={days} />
 				</div>
 			</div>
 		</>
