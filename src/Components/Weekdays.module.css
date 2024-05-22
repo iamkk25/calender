@@ -1,0 +1,16 @@
+.weeks {
+	grid-column: 1 / -1;
+	grid-row: span 1;
+	display: grid;
+	grid-template-columns: subgrid;
+}
+
+.today {
+	font-weight: bold;
+}
+
+.weekday {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
