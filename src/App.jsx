@@ -1,21 +1,29 @@
 import "./App.css";
-import Button from "./Components/Button";
+import CalenderHeader from "./Components/CalenderHeader";
 
 const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+const months = [
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December",
+];
 
 function App() {
 	return (
 		<>
 			<div className="calender">
 				<div className="grid">
-					<div className="header">
-						<Button direction="left">&lt;</Button>
-						<div className="info">
-							<h2 className="month">May</h2>
-							<h3 className="fullday">{new Date().toDateString()}</h3>
-						</div>
-						<Button direction="right">&gt;</Button>
-					</div>
+					<CalenderHeader />
 					<div className="week">
 						{week.map((day, index) => (
 							<div className="weekday" key={index}>
@@ -48,7 +56,7 @@ function App() {
 						<p className="date--cell">19</p>
 						<p className="date--cell">20</p>
 						<p className="date--cell">21</p>
-						<p className="date--cell">22</p>
+						<p className="date--cell current-date">22</p>
 						<p className="date--cell">23</p>
 						<p className="date--cell">24</p>
 						<p className="date--cell">25</p>
