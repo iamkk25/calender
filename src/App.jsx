@@ -27,7 +27,7 @@ function App() {
 						nextMonthHandler={nextMonthHandler}
 						prevMonthHandler={prevMonthHandler}
 					/>
-					<Weekdays today={today} />
+					<Weekdays dateObj={dateObj} today={today} />
 					<DateCells days={days} />
 				</div>
 			</div>
