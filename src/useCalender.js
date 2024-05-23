@@ -22,18 +22,33 @@ function useCalender() {
     // Current Month
     const date = new Date();
     const currentMonthIndex = date.getMonth();
+    const currentFullYear = date.getFullYear();
     const [monthIndex, setMonthIndex] = useState(currentMonthIndex);
+    const [year, setYear] = useState(currentFullYear);
 
     function prevMonthHandler() {
-        setMonthIndex(prev => prev - 1);
+        if (monthIndex === 0) {
+            setMonthIndex(prev => prev = 11);
+            setYear(prevYear => prevYear - 1);
+        }
+        else {
+            setMonthIndex(prev => prev - 1);
+        }
     }
 
     function nextMonthHandler() {
-        setMonthIndex(prev => prev + 1);
+        if (monthIndex === 11) {
+            setMonthIndex(prev => prev = 0);
+            setYear(prevYear => prevYear + 1)
+        }
+        else {
+            setMonthIndex(prev => prev + 1);
+        }
     }
 
-    console.log(monthIndex);
-    date.setMonth(monthIndex)
+    // setting month,year based on navigation
+    date.setMonth(monthIndex);
+    date.setFullYear(year);
 
     const now = new Date();
 
@@ -62,7 +77,8 @@ function useCalender() {
 
     for (let i = startDate; i <= lastDate; i++) {
         const dateObj = { date: i }
-        if (now.getDate() === i && now.getMonth() === date.getMonth()) {
+        // now.getDate() === i && now.getMonth() === date.getMonth()
+        if ((now.getDate() === i) && (now.toDateString() === date.toDateString())) {
             dateObj.className = 'current-date'
         }
         days.push(dateObj);

@@ -7,13 +7,14 @@ function CalenderHeader({
 	fullDate,
 	prevMonthHandler,
 	nextMonthHandler,
+	year,
 }) {
 	return (
 		<div className={styles.header}>
 			<Button direction="left" onClick={prevMonthHandler}>
 				&lt;
 			</Button>
-			<CalenderInfo currentMonth={month} fullDate={fullDate} />
+			<CalenderInfo year={year} currentMonth={month} fullDate={fullDate} />
 			<Button direction="right" onClick={nextMonthHandler}>
 				&gt;
 			</Button>

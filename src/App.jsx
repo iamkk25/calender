@@ -21,6 +21,7 @@ function App() {
 			<div className="calender">
 				<div className="grid">
 					<CalenderHeader
+						year={dateObj.getFullYear()}
 						fullDate={fullDate}
 						month={currentMonth}
 						nextMonthHandler={nextMonthHandler}
