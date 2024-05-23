@@ -77,7 +77,6 @@ function useCalender() {
 
     for (let i = startDate; i <= lastDate; i++) {
         const dateObj = { date: i }
-        // now.getDate() === i && now.getMonth() === date.getMonth()
         if ((now.getDate() === i) && (now.toDateString() === date.toDateString())) {
             dateObj.className = 'current-date'
         }
