@@ -11,9 +11,10 @@ function App() {
 		currentMonth,
 		days,
 		fullDate,
+		today,
 		nextMonthHandler,
 		prevMonthHandler,
-		today,
+		changeMonthAndYearHandler,
 	} = useCalender();
 
 	return (
@@ -24,8 +25,10 @@ function App() {
 						year={dateObj.getFullYear()}
 						fullDate={fullDate}
 						month={currentMonth}
+						monthIndex={monthIndex}
 						nextMonthHandler={nextMonthHandler}
 						prevMonthHandler={prevMonthHandler}
+						changeMonthAndYear={changeMonthAndYearHandler}
 					/>
 					<Weekdays dateObj={dateObj} today={today} />
 					<DateCells days={days} />

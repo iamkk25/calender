@@ -50,6 +50,16 @@ function useCalender() {
     date.setMonth(monthIndex);
     date.setFullYear(year);
 
+    const monthYearObj = {
+        _month: monthIndex,
+        _year: year
+    }
+
+    function changeMonthAndYearHandler({ _year, _month } = monthYearObj) {
+        setMonthIndex(Number(_month));
+        setYear(Number(_year));
+    }
+
     const now = new Date();
 
     // const currentDate = date.getDate()
@@ -95,7 +105,8 @@ function useCalender() {
         fullDate,
         dateObj: date,
         prevMonthHandler,
-        nextMonthHandler
+        nextMonthHandler,
+        changeMonthAndYearHandler
     }
 
 }
